@@ -6,6 +6,7 @@
             "name": "Torvic Team"
         }
     ],
+    "minimum-stability": "dev",
     "require": {
         "php": "^7.1.3",
         "doctrine/orm": "^2.6",
