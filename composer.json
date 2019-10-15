@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Torvic \\Common\\": "src/"
+            "Torvic\\Common\\": "src/"
         }
     },
     "autoload-dev": {
