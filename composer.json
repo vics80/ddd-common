@@ -18,12 +18,12 @@
     },
     "autoload": {
         "psr-4": {
-            "B1B2\\Common\\": "src/"
+            "Torvic \\Common\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\B1B2\\Common\\": "tests/"
+            "Tests\\Torvic\\Common\\": "tests/"
         }
     }
 }
