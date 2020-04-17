@@ -17,9 +17,14 @@ abstract class Collection extends Serializable implements \Iterator, \Countable,
      * Collection constructor.
      *
      */
-    public function __construct()
+    public function __construct(?array $objects = null)
     {
         $this->position = 0;
+        if (!empty($objects)) {
+            foreach ($objects as $object) {
+                $this->add($object);
+            }
+        }
     }
 
     /**

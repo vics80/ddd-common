@@ -8,6 +8,7 @@ use Doctrine\ORM\EntityNotFoundException;
 use Doctrine\ORM\EntityRepository;
 use Torvic\Common\Domain\DomainRepository;
 use Torvic\Common\Domain\Model\Entity;
+use Torvic\Common\Domain\Model\Id;
 
 abstract class DoctrineRepository implements DomainRepository
 {
@@ -159,6 +160,20 @@ abstract class DoctrineRepository implements DomainRepository
         $result = $this->repository->findBy($filterCriteria);
 
         return $this->buildCollection($result);
+    }
+
+    /**
+     * @param Id $id
+     * @return Entity
+     * @throws EntityNotFoundException
+     */
+    public function findOrFail(Id $id): Entity
+    {
+        $result = $this->repository->find($id);
+
+        $this->checkEmptySingleResult($result);
+
+        return $result;
     }
 
     /**
